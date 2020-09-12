@@ -34,6 +34,12 @@ module.exports = {
     },
     {
       path: './audits/secure-cookie.js'
+    },
+    {
+      path: './audits/x-frame-options.js'
+    },
+    {
+      path: './audits/same-site.js'
     }
   ],
   categories: {
@@ -47,7 +53,9 @@ module.exports = {
         {id: 'xss-headers', weight: 1},
         {id: 'x-content-type-options', weight: 1},
         {id: 'strict-transport-security', weight: 1},
-        {id: 'secure-cookie', weight: 1}
+        {id: 'secure-cookie', weight: 1},
+        {id: 'x-frame-options-header', weight: 1},
+        {id: 'cookie-samesite', weight: 1}
       ],
     },
   },

@@ -23,5 +23,8 @@
   },
   "devDependencies": {
     "lighthouse": "^6.3.0"
+  },
+  "dependencies": {
+    "valid-url": "^1.0.9"
   }
 }

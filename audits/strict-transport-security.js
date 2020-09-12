@@ -16,10 +16,11 @@ class StrictTransportSecurityAudit  extends Audit {
   
   static audit(artifacts) {
     const header = artifacts.ResponseHeaders['Strict-Transport-Security'];
+    const hasHeader = (typeof header === 'string');
     const hasHSTS = !!header;
     
     return {
-      score: hasHSTS ? 1 : 0,
+      score: hasHeader ? 1 : 0,
     };
   }
 }

@@ -6,7 +6,7 @@ const configJSON = require("./config");
 (async () => {
   const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
   const options = {logLevel: 'info', output: 'html', port: chrome.port};
-  const runnerResult = await lighthouse('https://web.dev', options, configJSON);
+  const runnerResult = await lighthouse('https://www.yahoo.com', options, configJSON);
   
   // `.report` is the HTML report as a string
   const reportHtml = runnerResult.report;

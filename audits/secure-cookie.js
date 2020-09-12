@@ -18,7 +18,7 @@ class SecureCookiesAudit extends Audit {
   static audit(artifacts) {
     const header = artifacts.ResponseHeaders['set-cookie'];
     const params = parseHeader(header);
-    const isSecure = params['Secure'] === true || !header;
+    const isSecure = params['secure'] === true || !header;
     
     return {
       score: isSecure ? 1 : 0,
