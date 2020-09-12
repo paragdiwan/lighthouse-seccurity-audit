@@ -1,6 +1,5 @@
 .idea
 node_modules
 lhreport.html
-*.htmlo
-o
+*.html
 
