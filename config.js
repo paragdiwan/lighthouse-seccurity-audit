@@ -4,47 +4,40 @@
  * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
  */
 'use strict';
+const path = require('path');
+const lighthouseDir = path.dirname(require.resolve('lighthouse'));
+const dirs = {
+  audits: path.join(__dirname, 'audits'),
+  gatherers: path.join(__dirname, 'gatherers'),
 
+};
+const addDirFiles = (dirname, basenames) => basenames.map(basename => path.join(dirname, basename));
 module.exports = {
   extends: 'lighthouse:default',
   
   passes: [{
     passName: 'defaultPass',
     gatherers: [
-      'gatherers/response-headers',
-      'gatherers/content-security',
-      'gatherers/html-bind-check'
+      ...addDirFiles(dirs.gatherers, [
+        'response-headers',
+        'content-security',
+        'html-bind-check',
+      ]),
     ],
   }],
   
   audits: [
-    {
-      path: './audits/cookie-http-only.js',
-    },
-    {
-      path: './audits/csp.js',
-    },
-    {
-      path: './audits/xss-protection-header.js',
-    },
-    {
-      path: './audits/nosniff.js',
-    },
-    {
-      path: './audits/strict-transport-security.js'
-    },
-    {
-      path: './audits/secure-cookie.js'
-    },
-    {
-      path: './audits/x-frame-options.js'
-    },
-    {
-      path: './audits/same-site.js'
-    },
-    {
-      path: './audits/html-attribute-check.js'
-    }
+    ...addDirFiles(dirs.audits, [
+      'cookie-http-only',
+      'csp',
+      'xss-protection-header',
+      'nosniff',
+      'strict-transport-security',
+      'secure-cookie',
+      'x-frame-options',
+      'same-site',
+      'html-attribute-check'
+    ]),
   ],
   categories: {
     security: {

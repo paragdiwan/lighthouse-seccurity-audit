@@ -35,7 +35,7 @@ class SameSiteCookieAudit extends Audit {
         };
       } else {
         return {
-          explaination: 'Invalid `SameSite` value. Can only be `Strict` or `Lax`.',
+          displayValue: 'Invalid `SameSite` value. Can only be `Strict` or `Lax`.',
           score: 0
         };
       }

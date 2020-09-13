@@ -3,15 +3,18 @@ const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 const configJSON = require("./config");
 
-async function run(url) {
+async function run(url, flags={}) {
   const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
   const options = {logLevel: 'info', output: 'html', port: chrome.port};
-  const runnerResult = await lighthouse(url, options, configJSON);
+  const mergeOptions = {
+    ...flags,
+    ...options
+  }
+  const runnerResult = await lighthouse(url, mergeOptions, configJSON);
   
-  // `.report` is the HTML report as a string
   const reportHtml = runnerResult.report;
   fs.writeFileSync('lhreport.html', reportHtml);
-  console.log('Report has been saved successfully!')
+  console.log('Report has been saved successfully in `lhreport.html`!')
   await chrome.kill();
 }
 

@@ -26,6 +26,15 @@ module.exports = {
     },
     {
       path: './audits/secure-cookie.js'
+    },
+    {
+      path: './audits/x-frame-options.js'
+    },
+    {
+      path: './audits/same-site.js'
+    },
+    {
+      path: './audits/html-attribute-check.js'
     }
   ],
   categories: {
@@ -33,13 +42,15 @@ module.exports = {
       title: 'Security',
       description: 'Security measures that can\'t be ignored.',
       auditRefs: [
-        // When we add more custom audits, `weight` controls how they're averaged together.
         {id: 'cookie-http-only', weight: 1},
         {id: 'content-security-policy', weight: 1},
         {id: 'xss-headers', weight: 1},
         {id: 'x-content-type-options', weight: 1},
         {id: 'strict-transport-security', weight: 1},
-        {id: 'secure-cookie', weight: 1}
+        {id: 'secure-cookie', weight: 1},
+        {id: 'x-frame-options-header', weight: 1},
+        {id: 'cookie-samesite', weight: 1},
+        {id: 'html-bind-attribute-check', weight: 2}
       ],
     },
   },
