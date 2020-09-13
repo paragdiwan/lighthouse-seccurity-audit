@@ -12,10 +12,13 @@ The extension can also be used within your code. A short example is given below.
 To render reports etc. it is recommended to import functionality from Lighthouse.
 
 ```javascript
-const runLighthouse = require('lighthouse-security-audit')
+const run = require("lighthouse-security-audit");
 
-runLighthouse(url, flags)
-  .then(results => console.log(results))
+(async () => {
+  const results = await run(url,flags);
+  console.log(results);
+})();
+
 ```
 ## Reference
 `lighthouse-security`  package.

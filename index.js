@@ -16,6 +16,7 @@ async function run(url, flags={}) {
   fs.writeFileSync('lhreport.html', reportHtml);
   console.log('Report has been saved successfully in `lhreport.html`!')
   await chrome.kill();
+  return runnerResult;
 }
 
 module.exports = run;

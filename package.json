@@ -1,9 +1,9 @@
 {
   "name": "lighthouse-security-audit",
   "description": "Security measures using lighthouse",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "license": "Apache-2.0",
-  "main": "./plugin.js",
+  "main": "./index.js",
   "bin": {
     "lighthouse-security-audit": "./bin/index.js"
   },
