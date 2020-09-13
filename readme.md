@@ -1,4 +1,8 @@
 # Lighthouse Security Audits
 
-## Run the Configuration
-`lighthouse --config-path=custom-config.js https://example.com`
+##Installation
+`npm install -g lighthouse-security-audit`
+
+##Run from CLI
+`lighthouse-security-audit <url>`
+
