@@ -12,7 +12,8 @@ module.exports = {
     passName: 'defaultPass',
     gatherers: [
       'gatherers/response-headers',
-      'gatherers/content-security'
+      'gatherers/content-security',
+      'gatherers/html-bind-check'
     ],
   }],
   
@@ -40,6 +41,9 @@ module.exports = {
     },
     {
       path: './audits/same-site.js'
+    },
+    {
+      path: './audits/html-attribute-check.js'
     }
   ],
   categories: {
@@ -55,7 +59,8 @@ module.exports = {
         {id: 'strict-transport-security', weight: 1},
         {id: 'secure-cookie', weight: 1},
         {id: 'x-frame-options-header', weight: 1},
-        {id: 'cookie-samesite', weight: 1}
+        {id: 'cookie-samesite', weight: 1},
+        {id: 'html-bind-attribute-check', weight: 2}
       ],
     },
   },
