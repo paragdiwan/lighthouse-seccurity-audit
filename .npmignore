@@ -1,0 +1,5 @@
+lhreport.html
+node_modules
+.gitignore
+.idea
+*.lock
