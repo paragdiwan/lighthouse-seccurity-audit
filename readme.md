@@ -12,6 +12,10 @@ npm install -g lighthouse-security-audit
 `lighthouse-security-audit <url> --options`
 ```
 
+## Screenshot
+
+![Sample](https://github.com/paragdiwan/GitTutorial/raw/master/Screenshot%202020-09-13%20at%206.01.40%20PM.png)
+
 ## Programmatially
 
 The extension can also be used within your code. A short example is given below.
