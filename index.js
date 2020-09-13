@@ -3,18 +3,16 @@ const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 const configJSON = require("./config");
 
-(async () => {
+async function run(url) {
   const chrome = await chromeLauncher.launch({chromeFlags: ['--headless']});
   const options = {logLevel: 'info', output: 'html', port: chrome.port};
-  const runnerResult = await lighthouse('http://localhost:8008', options, configJSON);
+  const runnerResult = await lighthouse(url, options, configJSON);
   
   // `.report` is the HTML report as a string
   const reportHtml = runnerResult.report;
   fs.writeFileSync('lhreport.html', reportHtml);
-  
-  // `.lhr` is the Lighthouse Result as a JS object
-  console.log('Report is done for', runnerResult.lhr.finalUrl);
-  console.log('Performance score was', runnerResult.lhr.categories.performance.score * 100);
-  
+  console.log('Report has been saved successfully!')
   await chrome.kill();
-})();
+}
+
+module.exports = run;

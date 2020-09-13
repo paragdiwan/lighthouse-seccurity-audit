@@ -1,9 +1,12 @@
 {
   "name": "lighthouse-security-audit",
   "description": "Security measures using lighthouse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "main": "./plugin.js",
+  "bin": {
+    "lighthouse-security-audit": "./bin/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paragdiwan/lighthouse-security-audit.git"
@@ -27,11 +30,5 @@
   "dependencies": {
     "valid-url": "^1.0.9"
   },
-  "homepage": "https://github.com/paragdiwan/lighthouse-security-audit#readme",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "lighthouse --config-path=config.js https://example.com"
-  }
+  "homepage": "https://github.com/paragdiwan/lighthouse-security-audit#readme"
 }
