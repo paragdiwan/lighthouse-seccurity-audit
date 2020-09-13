@@ -1,12 +1,18 @@
 # Lighthouse Security Audits
 
-##Installation
-`npm install -g lighthouse-security-audit`
+## Installation
 
-##Run from CLI
+```sh
+npm install -g lighthouse-security-audit
+```
+
+## Run from CLI
+
+```sh
 `lighthouse-security-audit <url> --options`
+```
 
-## Use in code
+## Programmatially
 
 The extension can also be used within your code. A short example is given below.
 To render reports etc. it is recommended to import functionality from Lighthouse.
@@ -15,10 +21,11 @@ To render reports etc. it is recommended to import functionality from Lighthouse
 const run = require("lighthouse-security-audit");
 
 (async () => {
-  const results = await run(url,flags);
+  const results = await run(url, flags);
   console.log(results);
 })();
-
 ```
+
 ## Reference
-`lighthouse-security`  package.
+
+`lighthouse-security` package.
